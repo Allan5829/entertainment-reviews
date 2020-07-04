@@ -1,4 +1,6 @@
 Todo list:
+-look how to make a default value for migrations
+
 -make proper readme
 -add license
 -check if I need the lib folder
