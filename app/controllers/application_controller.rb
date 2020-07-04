@@ -23,6 +23,8 @@ class ApplicationController < Sinatra::Base
 
     #add method that checks if a form field is blank or has certain characters
 
+    #add method that checks if current user_id matches the one that tries to edit
+
   end
 
   get "/" do
