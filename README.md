@@ -1,9 +1,9 @@
 Todo list:
 -look how to make a default value for migrations
+-make a secure sessions_secret 
 
 -make proper readme
 -add license
--check if I need the lib folder
 -add gitignore doc for secure password
 -make the app...duh
 
