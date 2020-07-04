@@ -17,8 +17,9 @@ ActiveRecord::Schema.define(version: 20200704063342) do
     t.string  "type_of_media"
     t.string  "name"
     t.string  "completion"
-    t.integer "review_score"
+    t.string  "review_score"
     t.string  "review_body"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
