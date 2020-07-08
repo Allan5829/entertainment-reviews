@@ -1,0 +1,21 @@
+<h2>Create a new account!</h2>
+<h3>Please fill out the following fields to sign up!</h3>
+<form method="POST" action="/signup">
+    <label for="name">Username:</label>
+    <input type="text" name="name">
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" name="email">
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" name="password">
+    <br>
+    Who would you like to see your reviews?
+    <select name="public" id="public">
+        <option value=false>Only I can see my reviews.</option>
+        <option value=true>Everyone can see my reviews.</option>
+    </select>
+    <br>
+
+    <input type="submit" value="Sign Up">
+</form>
