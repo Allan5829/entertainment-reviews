@@ -1,5 +1,4 @@
 Todo list:
--lets users signup, login, and logout
 -lets users perform CRUD actions with reviews
 -lets anyone view PUBLIC reviews
 -EXTRA make a secure sessions_secret

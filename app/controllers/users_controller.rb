@@ -16,7 +16,9 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             redirect '/' #temp redirect location  
         end
-        redirect '/signup'
+
+        # @failed_user = user, attempting to show error messages
+        redirect '/signup_login'
     end 
 
     get "/login" do 
@@ -30,13 +32,17 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
 			redirect '/' #temp redirect location
 		else
-			redirect '/login'
+			redirect '/signup_login'
 		end
     end 
 
     get "/logout" do 
         session.clear
         redirect '/login' #may change the redirect location
+    end 
+
+    get "/signup_login" do
+        erb :'/users/signup_login'
     end 
 
 end 
