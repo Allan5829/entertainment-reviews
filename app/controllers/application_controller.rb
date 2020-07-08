@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, "password_security" #change to secure password
+    set :session_secret, "d130344b47f6356d3f6fecd908447de5" #change to secure password if have time
   end
 
   helpers do
@@ -21,14 +21,12 @@ class ApplicationController < Sinatra::Base
 
     #add method that checks if user is logged in and if not redirects
 
-    #add method that checks if a form field is blank or has certain characters
-
     #add method that checks if current user_id matches the one that tries to edit
 
   end
 
   get "/" do
-    erb :welcome
+    erb :welcome #to be changed to public reviews
   end
 
 end

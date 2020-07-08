@@ -1,10 +1,12 @@
 Todo list:
--look how to make a default value for migrations
--make a secure sessions_secret 
+-lets users signup, login, and logout
+-lets users perform CRUD actions with reviews
+-lets anyone view PUBLIC reviews
+-EXTRA make a secure sessions_secret
+-EXTRA use slug methods to make urls unique
 
 -make proper readme
 -add license
--add gitignore doc for secure password
 -make the app...duh
 
 Application overview
