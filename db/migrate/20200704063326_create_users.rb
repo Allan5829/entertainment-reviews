@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :username
       t.string :email
       t.string :password_digest
-      t.boolean :public #user can choose to keep reviews private, default false
+      t.boolean :public, :default => false #user can choose to keep reviews private
     end
   end
 end

@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20200704063342) do
     t.string  "username"
     t.string  "email"
     t.string  "password_digest"
-    t.boolean "public"
+    t.boolean "public",          default: false
   end
 
 end
