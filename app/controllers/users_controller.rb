@@ -27,7 +27,7 @@ class UsersController < ApplicationController
         user = User.find_by(:email => params[:email])
  
 		if user && user.authenticate(params[:password])
-			session[:user_id] = user.id
+            session[:user_id] = user.id
 			redirect '/' #temp redirect location
 		else
 			redirect '/login'
@@ -35,6 +35,8 @@ class UsersController < ApplicationController
     end 
 
     get "/logout" do 
+        session.clear
+        redirect '/login' #may change the redirect location
     end 
 
 end 

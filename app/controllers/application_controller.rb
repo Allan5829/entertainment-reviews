@@ -19,7 +19,11 @@ class ApplicationController < Sinatra::Base
       User.find(session[:user_id])
     end
 
-    #add method that checks if user is logged in and if not redirects
+    def redirect_if_not_logged_in
+      if is_logged_in? == false #maybe make 1 page responsible for signup and login
+        redirect '/login'
+      end
+    end 
 
     #add method that checks if current user_id matches the one that tries to edit
 
