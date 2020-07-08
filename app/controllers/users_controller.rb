@@ -5,8 +5,18 @@ class UsersController < ApplicationController
         erb :'/users/signup'
     end 
 
-    post "/signup" do 
-        binding.pry
+    post "/signup" do #validations catch for presence and uniqueness
+        user = User.new(
+            :username => params[:username], 
+            :email => params[:email],
+            :password => params[:password],
+            :public => params[:public]) 
+
+        if user.save
+            session[:user_id] = user.id
+            redirect '/' #temp redirect location  
+        end
+        redirect '/signup'
     end 
 
     get "/login" do 
