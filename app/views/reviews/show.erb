@@ -5,3 +5,13 @@ Completion Status: <%= @review.completion %>
 Review Score: <%= @review.review_score %>
 <br>
 Additional Thoughts: <%= @review.review_body %>
+<br>
+<br>
+
+Would you like to edit your review? <a href="/reviews/<%= @review.id %>/edit">Edit Here</a>
+<br>
+Would you like to delete your review?
+<form method="post" action="/reviews/<%= @review.id %>/delete">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Review">
+</form>

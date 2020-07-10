@@ -50,4 +50,14 @@ class ReviewsController < ApplicationController
         redirect to "/reviews/#{@review.id}/edit"
     end  
 
+    delete "/reviews/:id/delete" do
+        @review = Review.find_by_id(params[:id])
+        if @review.user_id == current_user.id
+            @review.delete
+            redirect "/reviews"
+        else
+            redirect "/reviews/#{@review.id}"
+        end 
+    end
+
 end 
