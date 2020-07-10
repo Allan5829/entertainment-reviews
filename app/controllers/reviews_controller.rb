@@ -12,6 +12,17 @@ class ReviewsController < ApplicationController
         erb :'/reviews/new'
     end 
 
+    post "/reviews" do 
+        @review = Review.new(params)
+        @review.user_id = current_user.id
+
+        if @review.save
+            redirect '/reviews'
+        end 
+        redirect '/reviews/new'
+        binding.pry
+    end 
+
     get "/reviews/:id" do
         erb :'/reviews/show'
     end 

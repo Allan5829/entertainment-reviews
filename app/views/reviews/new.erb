@@ -4,7 +4,7 @@
     <select name="type_of_media" id="type_of_media">
         <option value=Book>Book</option>
         <option value=Movie>Movie</option>
-        <option value=Tv Show>Tv Show</option>
+        <option value="Tv Show">Tv Show</option>
     </select>
     <br>
     <label for="name">Name of the thing you are reviewing:</label>
@@ -12,14 +12,14 @@
     <br>
     How much have you seen/read? Or do you plan to watch?
     <select name="completion" id="completion">
-        <option value=Plan to Watch>Plan to Watch</option>
+        <option value="Plan To Watch">Plan to Watch</option>
         <option value=Started>Started</option>
         <option value=Completed>Completed</option>
     </select>
     <br>
     What would you score what you have already seen?
     <select name="review_score" id="review_score">
-         <option value=Not Started>Not Started</option>
+         <option value="Not Started">Not Started</option>
          <option value=1>1</option>
          <option value=2>2</option>
          <option value=3>3</option>
@@ -37,6 +37,6 @@
     <textarea name="review_body"></textarea>
     <br>
 
-    <input type="submit" name="Create">
+    <input type="submit" id="submit" value="Create Review">
 
 </form>
