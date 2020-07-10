@@ -20,10 +20,10 @@ class ReviewsController < ApplicationController
             redirect '/reviews'
         end 
         redirect '/reviews/new'
-        binding.pry
     end 
 
     get "/reviews/:id" do
+        @review = Review.find_by_id(params[:id])
         erb :'/reviews/show'
     end 
 
