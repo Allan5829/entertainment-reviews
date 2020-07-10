@@ -1,0 +1,42 @@
+<h2>Create A New Review</h2>
+<form method="POST" action='/reviews'>
+    What type of media is this review about?
+    <select name="type_of_media" id="type_of_media">
+        <option value=Book>Book</option>
+        <option value=Movie>Movie</option>
+        <option value=Tv Show>Tv Show</option>
+    </select>
+    <br>
+    <label for="name">Name of the thing you are reviewing:</label>
+    <input type="text" name="name">
+    <br>
+    How much have you seen/read? Or do you plan to watch?
+    <select name="completion" id="completion">
+        <option value=Plan to Watch>Plan to Watch</option>
+        <option value=Started>Started</option>
+        <option value=Completed>Completed</option>
+    </select>
+    <br>
+    What would you score what you have already seen?
+    <select name="review_score" id="review_score">
+         <option value=Not Started>Not Started</option>
+         <option value=1>1</option>
+         <option value=2>2</option>
+         <option value=3>3</option>
+         <option value=4>4</option>
+         <option value=5>5</option>
+         <option value=6>6</option>
+         <option value=7>7</option>
+         <option value=8>8</option>
+         <option value=9>9</option>
+         <option value=10>10</option>
+    </select>
+    <br>
+    Any additional thoughts?
+    <br>
+    <textarea name="review_body"></textarea>
+    <br>
+
+    <input type="submit" name="Create">
+
+</form>

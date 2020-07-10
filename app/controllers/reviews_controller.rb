@@ -1,9 +1,11 @@
 require 'pry'
 class ReviewsController < ApplicationController
 
-    get "/reviews" do
-        @reviews = Review.all
+    get "/reviews" do 
+        @reviews = Review.all #will modify to only look for public reviews
         erb :'/reviews/index' 
+        #<% user = User.find_by_id(review.user_id) %> will be inside index.erb
+        #<%= user.username %> 
     end 
 
     get "/reviews/new" do 

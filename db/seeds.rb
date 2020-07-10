@@ -1,22 +1,26 @@
-luffy = User.create(username: "Luffy",
-    email: "nextpirateking@gmail.com",
+luffy = User.create(username: "MonkeyDLuffy",
+    email: "thenextpirateking@gmail.com",
     password: "meat",
     public: true)
+luffy.save
 
-zolo = User.create(username: "Zoro",
-    email: "bestswordsman@gmail.com",
+zolo = User.create(username: "RoronoaZoro",
+    email: "thebestswordsman@gmail.com",
     password: "alcohol",
     public: true)
+zolo.save
 
-sanji = User.create(username: "Sanji",
-    email: "bestchief@gmail.com",
+sanji = User.create(username: "VinsmokeSanji",
+    email: "thebestchief@gmail.com",
     password: "women",
     public: true)
+sanji.save
 
-nami = User.create(username: "Nami",
-    email: "bestnavigator@gmail.com",
+nami = User.create(username: "CatBurgularNami",
+    email: "thebestnavigator@gmail.com",
     password: "money",
     public: false)
+nami.save
 
 Review.create(type_of_media: "Book",
     name: "How to Cook Meat",
