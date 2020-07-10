@@ -1,6 +1,8 @@
 Todo list:
--lets users perform CRUD actions with reviews
--lets anyone view PUBLIC reviews
+-display the username of the user that made each review
+-lets anyone view PUBLIC reviews, research activerecord
+-make the users home page where they see all of their reviews
+-EXTRA make options to organize all public reviews by certain values
 -EXTRA make a secure sessions_secret
 -EXTRA use slug methods to make urls unique
 

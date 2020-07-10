@@ -11,10 +11,13 @@ Specs:
 - [X] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)
     Reviews belong to user in app/model/review.rb
     
-- [ ] Include user accounts with unique login attribute (username or email)
-- [ ] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
+- [X] Include user accounts with unique login attribute (username or email)
+    Users model validates uniqueness
+- [X] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
+    Reviews controller has routes for each CRUD action
 - [ ] Ensure that users can't modify content created by other users
-- [ ] Include user input validations
+- [X] Include user input validations
+    Validates that certain fields must be filled in
 - [ ] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
 - [ ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
 
