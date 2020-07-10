@@ -1,3 +1,8 @@
+<% if !(@failed_user == nil) %>
+so far this isn't doing anything, sigh
+  <%= @failed_user.errors %>
+<% end %>
+
 <h2>Create a new account!</h2>
 <h3>Please fill out the following fields to sign up!</h3>
 <form method="POST" action="/signup">
