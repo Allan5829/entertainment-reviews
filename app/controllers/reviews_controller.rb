@@ -28,7 +28,24 @@ class ReviewsController < ApplicationController
     end 
 
     get "/reviews/:id/edit" do 
-        erb :'/reviews/edit'
+        @review = Review.find_by_id(params[:id])
+        if @review.user_id == current_user.id
+            erb :'/reviews/edit'
+        else
+            redirect "/reviews/#{@review.id}"
+        end 
     end 
+
+    patch "/tweets/:id" do 
+        @review = Review.find_by_id(params[:id])
+
+        @review.type_of_media = params[:type_of_media]
+        @review.name = params[:name]
+        @review.completion = params[:completion]
+        @review.review_score = params[:review_score]
+        @review.review_body = params[:review_body]
+        @review.save
+        redirect to "/reviews/#{@review.id}"
+    end  
 
 end 
