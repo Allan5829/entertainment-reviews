@@ -36,16 +36,18 @@ class ReviewsController < ApplicationController
         end 
     end 
 
-    patch "/tweets/:id" do 
+    patch "/reviews/:id" do 
         @review = Review.find_by_id(params[:id])
 
-        @review.type_of_media = params[:type_of_media]
-        @review.name = params[:name]
-        @review.completion = params[:completion]
-        @review.review_score = params[:review_score]
-        @review.review_body = params[:review_body]
-        @review.save
-        redirect to "/reviews/#{@review.id}"
+        if @review.update(
+            type_of_media: params[:type_of_media], 
+            name: params[:name], completion: params[:completion],
+            review_score: params[:review_score], review_body: params[:review_body]
+            )
+
+            redirect to "/reviews/#{@review.id}"
+        end
+        redirect to "/reviews/#{@review.id}/edit"
     end  
 
 end 

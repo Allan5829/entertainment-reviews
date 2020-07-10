@@ -5,9 +5,10 @@ Completion Status: <%= @review.completion %>
 Review Score: <%= @review.review_score %>
 <br>
 Additional Thoughts: <%= @review.review_body %>
+<br>
 
 Make changes below.
-<form method="POST" action="/reviews/<%= @review.id %>" method="post">
+<form method="post" action="/reviews/<%= @review.id %>">
     <input id="hidden" type="hidden" name="_method" value="patch">
 
     What type of media is this review about?
