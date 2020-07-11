@@ -4,8 +4,6 @@ class ReviewsController < ApplicationController
     get "/reviews" do 
         @reviews = Review.all #will modify to only look for public reviews
         erb :'/reviews/index' 
-        #<% user = User.find_by_id(review.user_id) %> will be inside index.erb
-        #<%= user.username %> 
     end 
 
     get "/reviews/new" do 
@@ -13,8 +11,7 @@ class ReviewsController < ApplicationController
     end 
 
     post "/reviews" do 
-        @review = Review.new(params)
-        @review.user_id = current_user.id
+        @review = current_user.reviews.build(params)
 
         if @review.save
             redirect '/reviews'

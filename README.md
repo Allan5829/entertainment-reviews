@@ -1,5 +1,4 @@
 Todo list:
--display the username of the user that made each review
 -lets anyone view PUBLIC reviews, research activerecord
 -make the users home page where they see all of their reviews
 -EXTRA make options to organize all public reviews by certain values
