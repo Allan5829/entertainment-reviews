@@ -25,8 +25,6 @@ class ApplicationController < Sinatra::Base
       end
     end 
 
-    #add method that checks if current user_id matches the one that tries to edit
-
   end
 
   get "/" do

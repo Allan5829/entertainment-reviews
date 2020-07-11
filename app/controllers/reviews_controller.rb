@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
         @review = current_user.reviews.build(params)
 
         if @review.save
-            redirect '/reviews'
+            redirect '/account/#{current_user.id}'
         end 
         redirect '/reviews/new'
     end 

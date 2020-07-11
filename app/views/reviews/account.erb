@@ -3,6 +3,14 @@ Hello, <%= @user.username %>
 <a href="/">Home</a>
 <a href="/logout">Logout</a>
 <br>
+<a href="/reviews/new">Create a new review</a>
+<br>
+<% if @user.public == true %>
+    *Anyone can see your reviews*
+<% else %>
+    *Only you can see your reviews*
+<% end  %>
+<br>
 
 <h2>My Reviews</h2>
     <% @reviews = @user.reviews %>
@@ -17,11 +25,7 @@ Hello, <%= @user.username %>
         <br>
         Additional Thoughts: <%= review.review_body %>
         <br>
-        <a href="/reviews/<%= review.id %>/edit">Edit Review</a>
-        <form method="post" action="/reviews/<%= review.id %>/delete">
-            <input id="hidden" type="hidden" name="_method" value="delete">
-            <input type="submit" id="submit" value="Delete Review">
-        </form>
+        <a href="/reviews/<%= review.id %>">More Actions</a>
         <br>
         ---------------------------------------------------------------
         <br>
