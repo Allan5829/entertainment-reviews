@@ -6,11 +6,20 @@ class ReviewsController < ApplicationController
         erb :'/reviews/index' 
     end 
 
+    get "/home" do 
+        @users = User.where(public: true)
+        erb :home
+    end 
+
     get "/reviews/new" do 
+        redirect_if_not_logged_in
+
         erb :'/reviews/new'
     end 
 
     post "/reviews" do 
+        redirect_if_not_logged_in
+
         @review = current_user.reviews.build(params)
 
         if @review.save
@@ -20,11 +29,15 @@ class ReviewsController < ApplicationController
     end 
 
     get "/reviews/:id" do
+        redirect_if_not_logged_in
+
         @review = Review.find_by_id(params[:id])
         erb :'/reviews/show'
     end 
 
     get "/reviews/:id/edit" do 
+        redirect_if_not_logged_in
+
         @review = Review.find_by_id(params[:id])
         if @review.user_id == current_user.id
             erb :'/reviews/edit'
@@ -34,6 +47,8 @@ class ReviewsController < ApplicationController
     end 
 
     patch "/reviews/:id" do 
+        redirect_if_not_logged_in
+
         @review = Review.find_by_id(params[:id])
 
         if @review.update(
@@ -48,6 +63,8 @@ class ReviewsController < ApplicationController
     end  
 
     delete "/reviews/:id/delete" do
+        redirect_if_not_logged_in
+
         @review = Review.find_by_id(params[:id])
         if @review.user_id == current_user.id
             @review.delete

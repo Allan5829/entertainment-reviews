@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def redirect_if_not_logged_in
-      if is_logged_in? == false #maybe make 1 page responsible for signup and login
+      if is_logged_in? == false
         redirect '/login'
       end
     end 
