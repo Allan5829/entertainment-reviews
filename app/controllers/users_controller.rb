@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
         if user.save
             session[:user_id] = user.id
-            redirect '/' #temp redirect location  
+            redirect '/' 
         end
 
         # @failed_user = user, attempting to show error messages
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
  
 		if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-			redirect '/' #temp redirect location
+			redirect '/'
 		else
 			redirect '/login'
 		end
@@ -38,7 +38,18 @@ class UsersController < ApplicationController
 
     get "/logout" do 
         session.clear
-        redirect '/login' #may change the redirect location
+        redirect '/'
+    end 
+
+    get "/account/:id" do
+        redirect_if_not_logged_in
+
+        @user = User.find_by_id(params[:id])
+        if @user.id == current_user.id
+            erb :'reviews/account'
+        else
+            redirect "/"
+        end 
     end 
 
 end 

@@ -30,7 +30,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :welcome #to be changed to public reviews
+    @users = User.where(public: true)
+    erb :'/reviews/index'
   end
 
 end

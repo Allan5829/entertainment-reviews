@@ -2,13 +2,7 @@ require 'pry'
 class ReviewsController < ApplicationController
 
     get "/reviews" do 
-        @reviews = Review.all #will modify to only look for public reviews
-        erb :'/reviews/index' 
-    end 
-
-    get "/home" do 
-        @users = User.where(public: true)
-        erb :home
+        redirect '/'
     end 
 
     get "/reviews/new" do 

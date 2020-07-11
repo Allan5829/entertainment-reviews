@@ -1,0 +1,29 @@
+Hello, <%= @user.username %>
+<br>
+<a href="/">Home</a>
+<a href="/logout">Logout</a>
+<br>
+
+<h2>My Reviews</h2>
+    <% @reviews = @user.reviews %>
+
+    <% @reviews.each do |review| %>
+        <br>
+        <%= review.type_of_media %> - <%= review.name %>
+        <br>
+        Completion Status: <%= review.completion %> 
+        <br>
+        Review Score: <%= review.review_score %>
+        <br>
+        Additional Thoughts: <%= review.review_body %>
+        <br>
+        <a href="/reviews/<%= review.id %>/edit">Edit Review</a>
+        <form method="post" action="/reviews/<%= review.id %>/delete">
+            <input id="hidden" type="hidden" name="_method" value="delete">
+            <input type="submit" id="submit" value="Delete Review">
+        </form>
+        <br>
+        ---------------------------------------------------------------
+        <br>
+
+    <% end %>
