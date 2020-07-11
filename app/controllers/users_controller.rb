@@ -41,7 +41,7 @@ class UsersController < ApplicationController
         redirect '/'
     end 
 
-    get "/account/:id" do
+    get "/account/:id" do #EXTRA use slug methods to make urls unique
         redirect_if_not_logged_in
 
         @user = User.find_by_id(params[:id])

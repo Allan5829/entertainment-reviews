@@ -1,5 +1,6 @@
 require 'pry'
 class ReviewsController < ApplicationController
+    #EXTRA make options to display public reviews in certain order
 
     get "/reviews" do 
         redirect '/'

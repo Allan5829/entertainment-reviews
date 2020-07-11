@@ -15,14 +15,20 @@ Specs:
     Users model validates uniqueness
 - [X] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
     Reviews controller has routes for each CRUD action
-- [ ] Ensure that users can't modify content created by other users
+- [X] Ensure that users can't modify content created by other users
+    In order to modify content the review's user_id must match the current user id.
 - [X] Include user input validations
     Validates that certain fields must be filled in
 - [ ] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
-- [ ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+- [X] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+    At readme.md
 
 Confirm
-- [ ] You have a large number of small Git commits
-- [ ] Your commit messages are meaningful
-- [ ] You made the changes in a commit that relate to the commit message
-- [ ] You don't include changes in a commit that aren't related to the commit message
+- [X] You have a large number of small Git commits 
+    30
+- [X] Your commit messages are meaningful
+    For the most part yes, although I may have forgotten a small change here and there.
+- [X] You made the changes in a commit that relate to the commit message
+    For the most part yes.
+- [X] You don't include changes in a commit that aren't related to the commit message
+    Only if I forgot to mention it.

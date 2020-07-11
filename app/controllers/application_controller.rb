@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, "d130344b47f6356d3f6fecd908447de5" #change to secure password if have time
+    set :session_secret, "d130344b47f6356d3f6fecd908447de5" #EXTRA hide the password
   end
 
   helpers do

@@ -1,12 +1,27 @@
-Todo list:
--EXTRA make options to organize all public reviews by certain values
--EXTRA make a secure sessions_secret
--EXTRA use slug methods to make urls unique
+# EntertainmentReviews
 
--make proper readme
--add license
--make the app...duh
+This app follows a similar theme to my Mod 1 project, which was manga. I use a website called my anime list to keep track of what anime I've watched or want to watch and one of the features on the website is giving reviews. This app lets users create reviews as a way of keeping track or just giving a regular review. I used entertainment in the title because it's meant as a catch-all term for books (or manga), movies, and tv shows (or anime).
 
-Application overview
-My first project was about showing info about "popular manga". 
-The way I consume media like tvs shows etc. is I want to watch something I think I'll like so I tend to do research and look at descriptions to see if I'd like the show I'm thinking about watching. Though when someone asks, hey have you seen anything good lately, you're probably not going to go through every show in your head like an array and pick the one that matches what you're looking for. Wouldn't it be convenient to have a list of things you've watched and just show that to whoever asks. How this relates to manga? It's a type of entertainment just like books and that will be an option when creating a review. I'm comparing the project I'm making to something like a website called my-anime-list but my project will clearly be a lot more basic.
+## Installation
+
+To use this app, clone the repository and run
+
+    $ bundle install
+
+
+## Usage
+
+Make sure to run the migrations and you're good to go.
+
+    $ rake db:migrate
+
+    $ shotgun
+
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/'Allan5829'/entertainment-reviews. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
