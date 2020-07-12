@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
         @review = current_user.reviews.build(params)
 
         if @review.save
-            redirect '/account/#{current_user.id}'
+            redirect "/account/#{current_user.id}"
         end 
         redirect '/reviews/new'
     end 
@@ -63,7 +63,7 @@ class ReviewsController < ApplicationController
         @review = Review.find_by_id(params[:id])
         if @review.user_id == current_user.id
             @review.delete
-            redirect "/reviews"
+            redirect "/account/#{current_user.id}"
         else
             redirect "/reviews/#{@review.id}"
         end 
