@@ -23,9 +23,8 @@
             Review Score: <%= review.review_score %>
             <br>
             Additional Thoughts: <%= review.review_body %>
-            <br>
-            <% user = User.find_by_id(review.user_id) %> 
-            Review by User: <%= user.username %>
+            <br> 
+            Review by User: <%= review.user.username %>
             <br>
             ---------------------------------------------------------------
             <br>

@@ -26,8 +26,9 @@ class ReviewsController < ApplicationController
     get "/reviews/:id" do
         redirect_if_not_logged_in
 
-        @review = Review.find_by_id(params[:id])
+        set_review
         erb :'/reviews/show'
+ 
     end 
 
     get "/reviews/:id/edit" do 
@@ -46,7 +47,7 @@ class ReviewsController < ApplicationController
 
         @review = Review.find_by_id(params[:id])
 
-        if @review.update(
+        if @review.user_id == current_user.id && @review.update(
             type_of_media: params[:type_of_media], 
             name: params[:name], completion: params[:completion],
             review_score: params[:review_score], review_body: params[:review_body]
@@ -68,5 +69,12 @@ class ReviewsController < ApplicationController
             redirect "/reviews/#{@review.id}"
         end 
     end
+
+    private 
+    def set_review
+        if !(@review = Review.find_by_id(params[:id]))
+            redirect '/'
+        end
+    end 
 
 end 
