@@ -1,3 +1,8 @@
+<% if !(@failed_user== nil) %>
+    Your email and/or password was not found. Please try again.
+<% end %>
+<br>
+
 <h2>Log into your account.</h2>
 <h3>Please fill out the following fields to login.</h3>
 <form method="POST" action="/login">

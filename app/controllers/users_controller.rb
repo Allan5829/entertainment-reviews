@@ -17,8 +17,8 @@ class UsersController < ApplicationController
             redirect '/' 
         end
 
-        # @failed_user = user, attempting to show error messages
-        redirect '/signup'
+        @failed_user = user
+        erb :'/users/signup'
     end 
 
     get "/login" do 
@@ -31,9 +31,10 @@ class UsersController < ApplicationController
 		if user && user.authenticate(params[:password])
             session[:user_id] = user.id
 			redirect '/'
-		else
-			redirect '/login'
-		end
+        end 
+
+		@failed_user = "failed to login"
+        erb :'/users/login'
     end 
 
     get "/logout" do 

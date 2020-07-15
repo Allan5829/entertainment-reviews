@@ -1,7 +1,17 @@
-<% if !(@failed_user == nil) %>
-so far this isn't doing anything, sigh
-  <%= @failed_user.errors %>
+<% if !(@failed_user== nil) %>
+    <% if !(@failed_user.errors[:username][0] == nil) %>
+    The username <%= @failed_user.errors[:username][0] %>
+    <% end %>
+    <br>
+    <% if !(@failed_user.errors[:email][0] == nil) %>
+    The email <%= @failed_user.errors[:email][0] %>
+    <% end %>
+    <br>
+    <% if !(@failed_user.errors[:password][0] == nil) %>
+    The password <%= @failed_user.errors[:password][0] %>
+    <% end %>
 <% end %>
+<br>
 
 <h2>Create a new account!</h2>
 <h3>Please fill out the following fields to sign up!</h3>
